@@ -5,16 +5,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AddScreen extends StatefulWidget {
-  const AddScreen({super.key});
 
-  @override
-  State<AddScreen> createState() => _AddScreenState();
 }
 
 class _AddScreenState extends State<AddScreen> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _groupNameController = TextEditingController();
-  final TextEditingController _groupCountController = TextEditingController();
+ 
   CollectionReference groups = FirebaseFirestore.instance.collection(groupCollectionName);
 
   @override
