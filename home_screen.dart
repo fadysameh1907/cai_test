@@ -30,11 +30,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   }
 
-  @override
-  void initState() {
-    super.initState();
-    getData();
-  }
 
 
 
@@ -46,15 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title:  Text('Home Screen'),
             subtitle: Text('${FirebaseAuth.instance.currentUser?.email}'),
         ),
-        actions: [
-          IconButton(
-            onPressed:() async {
-              await FirebaseAuth.instance.signOut();
-              Navigator.pushReplacementNamed(context, 'login');
-            },
-            icon: Icon(Icons.logout)
-          ),
-        ],
+      
       ),
       floatingActionButton: FloatingActionButton(onPressed: (){
         Navigator.pushNamed(context, 'add_group');
